@@ -16,9 +16,13 @@ public class Zad1 {
             oceny[i] = scanner.nextDouble();
         }
 
-        for (double ocena : oceny) {
-            sumaOcen += ocena;
+        System.out.println("Oceny:");
+        for (int i = 0; i < LiczbaPrzedmiotow; i++) {
+            System.out.println("Ocena z przedmiotu " + (i+1) + ": " + oceny[i]);
+            sumaOcen += oceny[i];
         }
+        System.out.println("Suma ocen: " + sumaOcen);
+        
 
         double srednia = sumaOcen / LiczbaPrzedmiotow;
 
