@@ -12,8 +12,15 @@ public class Zad1 {
         
 
         for (int i = 0; i < LiczbaPrzedmiotow; i++) {
-            System.out.print("Podaj ocenę z przedmiotu: " + (i+1) + ": ");
-            oceny[i] = scanner.nextDouble();
+            double ocena;
+            do {
+                System.out.print("Podaj ocenę z przedmiotu " + (i+1) + ": ");
+                ocena = scanner.nextDouble();
+                if (ocena <= 0 || ocena >= 6) {
+                    System.out.println("Ocena musi być dodatnia i mniejsza od 6. Podaj ocenę ponownie");
+                }
+            } while (ocena <=0 || ocena >= 6);
+            oceny[i] = ocena;
         }
 
         System.out.println("Oceny:");
