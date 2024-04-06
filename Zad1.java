@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Zad1 {
     public static void main(String[] args) {
@@ -32,9 +33,20 @@ public class Zad1 {
         
 
         double srednia = sumaOcen / LiczbaPrzedmiotow;
-
+        double mediana = obliczMediane(oceny);
+        
+        System.out.println("Mediana ocen: " + mediana);
         System.out.println("Średnia arytmetyczna ocen: " + srednia);
 
         scanner.close();
+    }
+    public static double obliczMediane(double[] array) {
+        Arrays.sort(array);
+        int srodek = array.length / 2;
+        if (array.length % 2 == 1) {
+            return array[srodek];
+        } else {
+            return (array[srodek - 1] + array[srodek]) / 2.0;
+        }
     }
 }
